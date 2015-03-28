@@ -84,23 +84,20 @@ public class UtilsJUnitTest extends TestCase {
             System.out.println(factorialOf + "! = " + Utils.computeFactorial(factorialOf));
             // 失敗したらメッセージを出力
             fail("IllegalArgumentException was expected");
-        } catch (IllegalArgumentException ex){
+        } catch (IllegalArgumentException ex) {
             // 違法引数例外が発生したら実行(今回は空)
         }
 
     }
 
-    /**
-     * Test of normalizeWord method, of class Utils.
-     */
-    public void testNormalizeWord() {
-        System.out.println("normalizeWord");
-        String word = "";
-        String expResult = "";
-        String result = Utils.normalizeWord(word);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    // testNormalizeWord()を削除
+    // testTemporarilyDisabled()を追加
+    // テストを無効化
+    public void DISABLED_testTemporarilyDisabled() {
+        // 実行確認用の出力
+        System.out.println("* UtilsJUnit3Test: test method 4 - checkExpectedException()");
+        // normalizeWord()のテスト
+        assertEquals("Malm\u00f6", Utils.normalizeWord("Malmo\u0308"));
     }
 
 }
