@@ -12,19 +12,23 @@ import junit.framework.TestCase;
  * @author mori
  */
 public class UtilsJUnitTest extends TestCase {
-    
+
     public UtilsJUnitTest(String testName) {
         super(testName);
     }
-    
+
     @Override
     protected void setUp() throws Exception {
         super.setUp();
+        // 実行確認用の出力
+        System.out.println("* UtilsJUnit3Test: setUp() method");
     }
-    
+
     @Override
     protected void tearDown() throws Exception {
         super.tearDown();
+        // 実行確認用の出力
+        System.out.println("* UtilsJUnit3Test: tearDown() method");
     }
 
     /**
@@ -65,5 +69,5 @@ public class UtilsJUnitTest extends TestCase {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-    
+
 }
