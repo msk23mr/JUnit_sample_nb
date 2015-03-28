@@ -5,6 +5,7 @@
  */
 package sample;
 
+import java.util.concurrent.TimeoutException;
 import junit.framework.TestCase;
 
 /**
@@ -40,17 +41,37 @@ public class UtilsJUnitTest extends TestCase {
         assertEquals("Hello, World!", Utils.concatWords("Hello", ",", "World", "!"));
     }
 
-    /**
-     * Test of computeFactorial method, of class Utils.
-     */
-    public void testComputeFactorial() {
-        System.out.println("computeFactorial");
-        int number = 0;
-        String expResult = "";
-        String result = Utils.computeFactorial(number);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    // testComputeFactorial()を削除
+    // testWithTimeout()を追加
+    public void testWithTimeout () throws InterruptedException, TimeoutException {
+        // 実行確認用の出力
+        System.out.println("* UtilsJUnit3Test: test method 2 - testWithTimeout()");
+        // 1～30001までのランダムな整数
+        final int factorialOf = 1 + (int) (30000 * Math.random());
+        // 生成したランダム整数を出力
+        System.out.println("computing: " + factorialOf + "!");
+        
+        // テストスレッド
+        Thread testThread = new Thread() {
+            @Override
+            public void run () {
+                // ランダム整数の階乗を出力
+                System.out.println(factorialOf + "! = " + Utils.computeFactorial(factorialOf));
+            }
+        };
+        
+        // テストスレッドをスタート
+        testThread.start();
+        // スレッドを1000ミリ秒でスリープ
+        Thread.sleep(1000);
+        // テストスレッドを割り込み
+        testThread.interrupt();
+        
+        // テストスレッドが割り込みしたら
+        if (testThread.isInterrupted()) {
+            // タイムアウト例外をスロー
+            throw new TimeoutException("the test took too long to complete");
+        }
     }
 
     /**
