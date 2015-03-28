@@ -31,17 +31,13 @@ public class UtilsJUnitTest extends TestCase {
         System.out.println("* UtilsJUnit3Test: tearDown() method");
     }
 
-    /**
-     * Test of concatWords method, of class Utils.
-     */
-    public void testConcatWords() {
-        System.out.println("concatWords");
-        String[] words = null;
-        String expResult = "";
-        String result = Utils.concatWords(words);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    // testConcatWords()を削除
+    // testHelloWorld()を追加
+    public void testHelloWorld() {
+        // 実行確認用の出力
+        System.out.println("* UtilsJUnit3Test: test method 1 - testHelloWorld()");
+        // concatWords()のテスト
+        assertEquals("Hello, World!", Utils.concatWords("Hello", ",", "World", "!"));
     }
 
     /**
