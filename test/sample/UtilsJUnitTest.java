@@ -38,7 +38,7 @@ public class UtilsJUnitTest extends TestCase {
         // 実行確認用の出力
         System.out.println("* UtilsJUnit3Test: test method 1 - testHelloWorld()");
         // concatWords()のテスト
-        assertEquals("Hello, World!", Utils.concatWords("Hello", ",", "World", "!"));
+        assertEquals("Hello, World!", Utils.concatWords("Hello", ", ", "World", "!"));
     }
 
     // testComputeFactorial()を削除
