@@ -17,46 +17,45 @@ import static org.junit.Assert.*;
  * @author mori
  */
 public class UtilsJUnitTest {
-    
+
     public UtilsJUnitTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
         // 実行確認出力
         System.out.println("* UtilsJUnit4Test: @BeforeClass method");
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
         // 実行確認出力
         System.out.println("* UtilsJUnit4Test: @AfterClass method");
     }
-    
+
     @Before
     public void setUp() {
         // 実行確認出力
         System.out.println("* UtilsJUnit4Test: @Before method");
     }
-    
+
     @After
     public void tearDown() {
         // 実行確認出力
         System.out.println("* UtilsJUnit4Test: @After method");
     }
 
+    // testConcatWords()を削除
+    // helloWorldCheck()を追加
     /**
      * Test of concatWords method, of class Utils.
      */
     @Test
-    public void testConcatWords() {
-        System.out.println("concatWords");
-        String[] words = null;
-        String expResult = "";
-        String result = Utils.concatWords(words);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void helloWorldCheck() {
+        // 実行確認出力
+        System.out.println("* UtilsJUnit4Test: test method 1 - helloWorldCheck()");
+        // アサーションを追加
+        assertEquals("Hello, world!", Utils.concatWords("Hello", ", ", "world", "!"));
     }
 
     /**
@@ -86,5 +85,5 @@ public class UtilsJUnitTest {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-    
+
 }
