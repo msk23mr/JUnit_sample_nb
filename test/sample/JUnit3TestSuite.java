@@ -20,7 +20,11 @@ public class JUnit3TestSuite extends TestCase {
     }
     
     public static Test suite() {
+        // テストスイートを生成
         TestSuite suite = new TestSuite("JUnit3TestSuite");
+        // 生成したテストスイートにテストクラスを追加
+        suite.addTest(new TestSuite(sample.VectorsJUnit3Test.class));
+        suite.addTest(new TestSuite(sample.UtilsJUnitTest.class));
         return suite;
     }
     
