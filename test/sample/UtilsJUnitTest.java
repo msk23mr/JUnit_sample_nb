@@ -58,18 +58,18 @@ public class UtilsJUnitTest {
         assertEquals("Hello, world!", Utils.concatWords("Hello", ", ", "world", "!"));
     }
 
-    /**
-     * Test of computeFactorial method, of class Utils.
-     */
-    @Test
-    public void testComputeFactorial() {
-        System.out.println("computeFactorial");
-        int number = 0;
-        String expResult = "";
-        String result = Utils.computeFactorial(number);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    // testComputeFactorial()を削除
+    // testWithTimeout()を追加
+    @Test(timeout=1000)
+    public void testWithTimeout() {
+        // 実行確認出力
+        System.out.println("* UtilsJUnit4Test: test method 2 - testWithTimeout()");
+        // 1～30001のランダム整数を生成
+        final int factorialOf = 1 + (int) (30000 * Math.random());
+        // 生成したランダム整数を出力
+        System.out.println("computing " + factorialOf + '!');
+        // ランダム整数の階乗を算出・出力
+        System.out.println(factorialOf + "! = " + Utils.computeFactorial(factorialOf));
     }
 
     /**
