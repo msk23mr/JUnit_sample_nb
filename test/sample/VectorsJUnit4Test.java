@@ -30,16 +30,29 @@ public class VectorsJUnit4Test {
     /**
      * Test of equal method, of class Vectors.
      */
+    // テストメソッド名を変更
     @Test
-    public void testEqual() {
-        System.out.println("equal");
-        int[] a = null;
-        int[] b = null;
-        boolean expResult = false;
-        boolean result = Vectors.equal(a, b);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void equalCheck() {
+        // 実行確認用の出力
+        System.out.println("* VectorsJUnit4Test: equalsCheck()");
+        // アサーションを追加
+        assertTrue(Vectors.equal(new int[]{}, new int[]{}));
+        assertTrue(Vectors.equal(new int[]{0}, new int[]{0}));
+        assertTrue(Vectors.equal(new int[]{0, 0}, new int[]{0, 0}));
+        assertTrue(Vectors.equal(new int[]{0, 0, 0}, new int[]{0, 0, 0}));
+        assertTrue(Vectors.equal(new int[]{5, 6, 7}, new int[]{5, 6, 7}));
+
+        assertFalse(Vectors.equal(new int[]{}, new int[]{0}));
+        assertFalse(Vectors.equal(new int[]{0}, new int[]{0, 0}));
+        assertFalse(Vectors.equal(new int[]{0, 0}, new int[]{0, 0, 0}));
+        assertFalse(Vectors.equal(new int[]{0, 0, 0}, new int[]{0, 0}));
+        assertFalse(Vectors.equal(new int[]{0, 0}, new int[]{0}));
+        assertFalse(Vectors.equal(new int[]{0}, new int[]{}));
+
+        assertFalse(Vectors.equal(new int[]{0, 0, 0}, new int[]{0, 0, 1}));
+        assertFalse(Vectors.equal(new int[]{0, 0, 0}, new int[]{0, 1, 0}));
+        assertFalse(Vectors.equal(new int[]{0, 0, 0}, new int[]{1, 0, 0}));
+        assertFalse(Vectors.equal(new int[]{0, 0, 1}, new int[]{0, 0, 3}));
     }
 
     /**
