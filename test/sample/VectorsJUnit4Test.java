@@ -15,14 +15,14 @@ import static org.junit.Assert.*;
  * @author mori
  */
 public class VectorsJUnit4Test {
-    
+
     public VectorsJUnit4Test() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
@@ -45,16 +45,17 @@ public class VectorsJUnit4Test {
     /**
      * Test of scalarMultiplication method, of class Vectors.
      */
+    // テストメソッド名を変更
     @Test
-    public void testScalarMultiplication() {
-        System.out.println("scalarMultiplication");
-        int[] a = null;
-        int[] b = null;
-        int expResult = 0;
-        int result = Vectors.scalarMultiplication(a, b);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void ScalarMultiplicationCheck() {
+        // 実行確認用の出力
+        System.out.println("* VectorsJUnit4Test: ScalarMultiplicationCheck()");
+        // アサーションを追加
+        assertEquals(0, Vectors.scalarMultiplication(new int[]{0, 0}, new int[]{0, 0}));
+        assertEquals(39, Vectors.scalarMultiplication(new int[]{3, 4}, new int[]{5, 6}));
+        assertEquals(-39, Vectors.scalarMultiplication(new int[]{-3, 4}, new int[]{5, -6}));
+        assertEquals(0, Vectors.scalarMultiplication(new int[]{5, 9}, new int[]{-9, 5}));
+        assertEquals(100, Vectors.scalarMultiplication(new int[]{6, 8}, new int[]{6, 8}));
     }
-    
+
 }
