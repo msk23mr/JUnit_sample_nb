@@ -60,7 +60,7 @@ public class UtilsJUnitTest {
 
     // testComputeFactorial()を削除
     // testWithTimeout()を追加
-    @Test(timeout=1000)
+    @Test(timeout = 1000)
     public void testWithTimeout() {
         // 実行確認出力
         System.out.println("* UtilsJUnit4Test: test method 2 - testWithTimeout()");
@@ -69,6 +69,17 @@ public class UtilsJUnitTest {
         // 生成したランダム整数を出力
         System.out.println("computing " + factorialOf + '!');
         // ランダム整数の階乗を算出・出力
+        System.out.println(factorialOf + "! = " + Utils.computeFactorial(factorialOf));
+    }
+
+    // checkExpectedException()を追加
+    @Test(expected = IllegalArgumentException.class)
+    public void checkExpectedException() {
+        // 実行確認出力
+        System.out.println("* UtilsJUnit4Test: test method 3 - checkExpectedException()");
+        // 負数
+        final int factorialOf = -5;
+        // computeFactorial()の引数として負数を指定することで、引数違反例外をスローさせます
         System.out.println(factorialOf + "! = " + Utils.computeFactorial(factorialOf));
     }
 
