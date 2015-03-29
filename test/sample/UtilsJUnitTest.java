@@ -23,18 +23,26 @@ public class UtilsJUnitTest {
     
     @BeforeClass
     public static void setUpClass() {
+        // 実行確認出力
+        System.out.println("* UtilsJUnit4Test: @BeforeClass method");
     }
     
     @AfterClass
     public static void tearDownClass() {
+        // 実行確認出力
+        System.out.println("* UtilsJUnit4Test: @AfterClass method");
     }
     
     @Before
     public void setUp() {
+        // 実行確認出力
+        System.out.println("* UtilsJUnit4Test: @Before method");
     }
     
     @After
     public void tearDown() {
+        // 実行確認出力
+        System.out.println("* UtilsJUnit4Test: @After method");
     }
 
     /**
